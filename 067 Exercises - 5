@@ -1,0 +1,31 @@
+using System;
+
+/* 5- Write a program and ask the user to enter an English word. Count the number of vowels (a, e, o, u, i) in the word.
+ * So, if the user enters "inadequate", the program should display 6 on the console*/
+
+namespace testingstuff
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter an english word: ");
+            var word = Console.ReadLine();
+            var vowels = new char[] { 'a', 'e', 'o', 'u', 'i' };
+            var wordArray = word.ToCharArray();
+
+            int counter = 0;
+            for (int i = 0; i < wordArray.Length; i++)
+            {
+                foreach (var v in vowels)
+                {
+                    if (wordArray[i] == v)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            Console.WriteLine("The number of vowels in \"{0}\" is {1}", word, counter);
+        }
+    }
+}

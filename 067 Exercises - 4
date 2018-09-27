@@ -1,0 +1,31 @@
+using System;
+
+/* Write a program and ask the user to enter a few words separated by a space. Use the words to create a variable name with PascalCase.
+ * For example, if the user types: "number of students", display "NumberOfStudents". Make sure that the program is not dependent on the input.
+ * So, if the user types "NUMBER OF STUDENTS", the program should still display "NumberOfStudents"*/
+
+namespace testingstuff
+{ 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a few words seperated by space: ");
+            var words = Console.ReadLine().ToLower();
+            var wordsArray = words.Split(' ');
+
+            Console.Write("Pascal case words: ");  
+            for (int i = 0; i < wordsArray.Length; i++)
+            {
+                var charArray = wordsArray[i].ToCharArray();
+                for (int z = 0; z < charArray.Length; z++)
+                {
+                    charArray[0] = char.ToUpper(charArray[0]);
+                    Console.Write(charArray[z]);
+                }
+            }
+            Console.WriteLine();
+
+        }
+    }    
+}

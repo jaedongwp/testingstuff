@@ -10,7 +10,7 @@ namespace testingstuff
         static void Main(string[] args)
         {
             Console.Write("Enter an english word: ");
-            var word = Console.ReadLine();
+            var word = Console.ReadLine().ToLower();
             var vowels = new char[] { 'a', 'e', 'o', 'u', 'i' };
             var wordArray = word.ToCharArray();
 
